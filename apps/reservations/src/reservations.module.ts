@@ -8,7 +8,7 @@ import {
   ReservationDocument,
   ReservationSchema,
 } from './models/reservation.schema';
-import { LoggerModule } from '@app/common';
+import { LoggerModule, HealthModule } from '@app/common';
 import { ConfigService, ConfigModule } from '@nestjs/config';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 
@@ -57,6 +57,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         inject: [ConfigService],
       },
     ]),
+    HealthModule,
   ],
   controllers: [ReservationsController],
   providers: [ReservationsService, ReservationsRepository],

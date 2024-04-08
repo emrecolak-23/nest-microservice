@@ -10,3 +10,4 @@ export * from './dto/card.dto';
 export * from './dto/create-charge.dto';
 export * from './interceptors/serialize.interceptor';
 export * from './models';
+export * from './health';
