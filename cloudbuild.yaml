@@ -1,0 +1,21 @@
+steps:
+  # Auth Service
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-east4-docker.pkg.dev/mimetic-encoder-419710/reservations/production', '-f', 'apps/reservations/Dockerfile', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-east4-docker.pkg.dev/mimetic-encoder-419710/reservations/production']
+  # Reservation Service
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-east4-docker.pkg.dev/mimetic-encoder-419710/auth/production', '-f', 'apps/auth/Dockerfile', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-east4-docker.pkg.dev/mimetic-encoder-419710/auth/production']
+  # Notification Service
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-east4-docker.pkg.dev/mimetic-encoder-419710/notifications/production', '-f', 'apps/notifications/Dockerfile', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-east4-docker.pkg.dev/mimetic-encoder-419710/notifications/production']
+  #Payments Service
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-east4-docker.pkg.dev/mimetic-encoder-419710/payments/production', '-f', 'apps/payments/Dockerfile', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-east4-docker.pkg.dev/mimetic-encoder-419710/payments/production']
