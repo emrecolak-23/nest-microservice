@@ -10,6 +10,7 @@ import { LocalStrategy } from './strategies/local.strategy';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { OtpModule } from './otp/otp.module';
+import { HealthModule } from '@app/common';
 
 @Module({
   imports: [
@@ -56,6 +57,7 @@ import { OtpModule } from './otp/otp.module';
       },
     ]),
     OtpModule,
+    HealthModule,
   ],
   controllers: [AuthController],
   providers: [AuthService, LocalStrategy, JwtStrategy],
