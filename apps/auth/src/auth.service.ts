@@ -46,7 +46,10 @@ export class AuthService {
       newUser.email,
     );
     if (!registeredUser) {
-      return await this.usersService.create(newUser);
+      return await this.usersService.create({
+        ...newUser,
+        roles: ['user'],
+      });
     } else if (!registeredUser.isEmailVerified) {
       return registeredUser;
     } else {

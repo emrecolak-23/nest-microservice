@@ -11,3 +11,4 @@ export * from './dto/create-charge.dto';
 export * from './interceptors/serialize.interceptor';
 export * from './models';
 export * from './health';
+export * from './decorators/roles.decorator';
